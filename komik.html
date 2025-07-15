@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<style>
+  .fade-out {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .fade-out.fade {
+    opacity: 0;
+  }
+</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Komik - GalaxyKomik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="fade-out">
+  <div class="overlay min-h-screen">
+    <header class="p-6 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-purple-300">🌌 GalaxyKomik</h1>
+      <nav class="space-x-6 text-lg">
+        <a href="beranda.html" class="hover:text-purple-300">Beranda</a>
+        <a href="komik.html" class="hover:text-purple-300 font-bold">Komik</a>
+        <a href="genre.html" class="hover:text-purple-300">Genre</a>
+        <a href="login.html" class="hover:text-purple-300">Login</a>
+      </nav>
+    </header>
+
+    <section class="px-6 md:px-20 py-12">
+      <h2 class="text-4xl font-bold text-purple-200 mb-10 text-center">📚 Daftar Komik</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card Komik -->
+    <a href="detail.html" class="block">
+    <div class="bg-white bg-opacity-10 p-4 rounded-lg hover:scale-105 transition cursor-pointer">
+        <img src="Galactic.png" alt="Komik 1" class="rounded mb-2">
+        <h4 class="text-lg font-semibold text-purple-200">Galactic Hero</h4>
+        <p class="text-sm text-gray-300">Genre: Aksi, Sci-Fi</p>
+    </div>
+    </a>
+    <a href="solo.html" class="block">
+    <div class="bg-white bg-opacity-10 p-4 rounded-lg hover:scale-105 transition cursor-pointer">
+        <img src="solo.png" alt="Komik 1" class="rounded mb-2">
+        <h4 class="text-lg font-semibold text-purple-200">Solo Leveling</h4>
+        <p class="text-sm text-gray-300">Genre: Aksi, Fiksi</p>
+    </div>
+    </a>
+    <a href="dan.html" class="block">
+    <div class="bg-white bg-opacity-10 p-4 rounded-lg hover:scale-105 transition cursor-pointer">
+        <img src="dan.png" alt="Komik 1" class="rounded mb-2">
+        <h4 class="text-lg font-semibold text-purple-200">Dan Dan Dan</h4>
+        <p class="text-sm text-gray-300">Genre: Aksi, Sci-Fi</p>
+    </div>
+    </a>
+    <a href="powerfull.html" class="block">
+    <div class="bg-white bg-opacity-10 p-4 rounded-lg hover:scale-105 transition cursor-pointer">
+        <img src="Powerfull.png" alt="Komik 1" class="rounded mb-2">
+        <h4 class="text-lg font-semibold text-purple-200">Galactic Hero</h4>
+        <p class="text-sm text-gray-300">Genre: Aksi, Sci-Fi</p>
+    </div>
+    </a>
+        <!-- Tambahkan lebih banyak komik di sini -->
+      </div>
+    </section>
+
+    <footer class="text-center py-6 text-sm text-gray-400">
+      &copy; 2025 GalaxyKomik. Semua hak dilindungi.
+    </footer>
+  </div>
+  <script>
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href && link.href !== '#' && !link.target) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.classList.add('fade');
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500); // Waktu sesuai CSS transition
+      });
+    }
+  });
+
+  // Saat halaman dimuat, reset fade
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('fade');
+  });
+</script>
+</body>
+</html>
